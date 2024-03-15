@@ -70,6 +70,7 @@ def rfm_analysis_city(df):
 all_df = pd.read_csv("submission/all_data.csv")
 
 datetime_columns = ["order_purchase_timestamp", "order_delivered_customer_date"]
+all_df['order_purchase_timestamp'] = pd.to_datetime(all_df['order_purchase_timestamp'])
 all_df.sort_values(by="order_purchase_timestamp", inplace=True)
 all_df.reset_index(inplace=True)
  
